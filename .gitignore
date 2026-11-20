@@ -1,0 +1,10 @@
+node_modules
+.next
+out
+
+# TypeScript
+tsconfig.tsbuildinfo
+
+# Sistema y entorno
+.DS_Store
+.env*
