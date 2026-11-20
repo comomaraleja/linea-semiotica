@@ -1,0 +1,286 @@
+@import "tailwindcss";
+
+/* ── Tipografías: archivos en public/fonts (Google Fonts, licencia OFL) ───── */
+@font-face {
+  font-family: "Fredoka";
+  font-style: normal;
+  font-weight: 500 700;
+  font-display: swap;
+  src: url("/fonts/fredoka-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Fredoka";
+  font-style: normal;
+  font-weight: 500 700;
+  font-display: swap;
+  src: url("/fonts/fredoka-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Bricolage Grotesque";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("/fonts/bricolage-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Bricolage Grotesque";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("/fonts/bricolage-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Baloo 2";
+  font-style: normal;
+  font-weight: 600 800;
+  font-display: swap;
+  src: url("/fonts/baloo2-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Baloo 2";
+  font-style: normal;
+  font-weight: 600 800;
+  font-display: swap;
+  src: url("/fonts/baloo2-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+:root {
+  --font-fredoka: "Fredoka";
+  --font-bricolage: "Bricolage Grotesque";
+  --font-baloo: "Baloo 2";
+}
+
+@theme inline {
+  --font-display: var(--font-fredoka), ui-rounded, system-ui, sans-serif;
+  --font-sans: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-label: var(--font-baloo), ui-rounded, system-ui, sans-serif;
+}
+
+/* ── Paleta: tinta nocturna y papel ───────────────────────────────────────── */
+@theme {
+  --color-ink: #07080e; /* fondo de página, el más profundo */
+  --color-night: #0f111c; /* superficie del mapa (noche) — carbón: #1c1c1f */
+  --color-panel: #181b2b; /* superficies elevadas — carbón: #27272b */
+  --color-line: #2b2f47; /* bordes y divisores — carbón: #3a3a40 */
+  --color-muted: #9b9fbb; /* texto secundario — carbón: #a3a2a8 */
+  --color-paper: #f3ead8; /* texto principal sobre tinta */
+  --color-card: #f7f0e1; /* papel de las fichas */
+  --color-card-line: #e2d6bf;
+  --color-card-ink: #1d1a2b;
+  --color-card-muted: #6f6779;
+}
+
+html {
+  background:
+    radial-gradient(1200px 600px at 15% -10%, #1a1f3d 0%, transparent 60%),
+    radial-gradient(900px 500px at 110% 110%, #22173a 0%, transparent 55%),
+    var(--color-ink);
+  color: var(--color-paper);
+  color-scheme: dark;
+}
+
+.font-label {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: transparent;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: rise 320ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* Scroll horizontal discreto para la vista completa */
+.scroll-x {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line) transparent;
+}
+
+.logo-still {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise {
+    animation: none;
+  }
+  .logo-motion {
+    display: none;
+  }
+  .logo-still {
+    display: inline;
+  }
+  * {
+    transition: none !important;
+  }
+}
+
+/* Diálogo flotante dentro del mapa */
+.map-dialog {
+  --gap: 0.75rem;
+  --w: min(480px, calc(100% - 2 * var(--gap)));
+  position: absolute;
+  z-index: 40;
+  left: var(--gap);
+  right: var(--gap);
+  bottom: var(--gap);
+  max-height: 72%;
+  height: 72%;
+  overflow: hidden;
+  border: 1px solid var(--color-card-line);
+  border-radius: 1rem;
+  background: var(--color-card);
+  color: var(--color-card-ink);
+  color-scheme: light;
+  box-shadow:
+    0 30px 70px -20px rgb(0 0 0 / 0.75),
+    0 0 0 6px rgb(247 240 225 / 0.06);
+
+  /* Dentro de la ficha, los tokens se invierten: tinta sobre papel */
+  --color-paper: var(--color-card-ink);
+  --color-muted: var(--color-card-muted);
+  --color-line: var(--color-card-line);
+  --color-panel: var(--color-card);
+  opacity: 0;
+  transform: translateY(16px) scale(0.98);
+  pointer-events: none;
+  transition:
+    opacity 280ms ease,
+    transform 380ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.map-dialog[data-open="true"] {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+@media (min-width: 768px) {
+  .map-dialog {
+    --gap: 1rem;
+    top: var(--gap);
+    bottom: var(--gap);
+    left: auto;
+    right: var(--gap);
+    width: var(--w);
+    height: auto;
+    max-height: none;
+    transform: translateX(24px) scale(0.98);
+  }
+}
+
+/* Campos del formulario de aportes (sobre papel) */
+.input {
+  display: block;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-line);
+  background: color-mix(in srgb, var(--color-paper) 3%, white);
+  padding: 0.45rem 0.7rem;
+  font-size: 0.875rem;
+  color: var(--color-paper);
+  transition: border-color 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+}
+.input::placeholder {
+  color: var(--color-muted);
+  opacity: 0.75;
+}
+.input:focus {
+  outline: none;
+  border-color: color-mix(in srgb, var(--color-paper) 45%, transparent);
+  background: white;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-paper) 8%, transparent);
+}
+[data-invalid] .input {
+  border-color: #c2413b;
+}
+
+/* Atmósfera del mapa: viñeta en los bordes + grano muy sutil */
+.map-atmosphere {
+  background: radial-gradient(ellipse 130% 100% at 50% 45%, transparent 65%, rgb(3 4 10 / 0.35) 100%);
+}
+.map-atmosphere::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+/* Tags de las líneas: crecen con un pequeño rebote al pasar el mouse */
+.tag-chip {
+  transition:
+    transform 320ms cubic-bezier(0.34, 1.7, 0.5, 1),
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease,
+    box-shadow 200ms ease;
+}
+.tag-chip:hover {
+  transform: translateY(-2px) scale(1.07);
+}
+.tag-chip:active {
+  transform: scale(0.97);
+}
+.tag-chip[style*="--c"]:not([aria-pressed="true"]):hover {
+  background: color-mix(in srgb, var(--c) 45%, transparent) !important;
+  border-color: var(--c) !important;
+  color: var(--color-paper);
+}
+
+/* Superficie de papel (fichas y presentación): tinta sobre papel */
+.paper {
+  background: var(--color-card);
+  color: var(--color-card-ink);
+  color-scheme: light;
+  --color-paper: var(--color-card-ink);
+  --color-muted: var(--color-card-muted);
+  --color-line: var(--color-card-line);
+  --color-panel: var(--color-card);
+}
+
+/* Presentación "¿De qué se trata?": diálogo centrado */
+.about-overlay {
+  background: rgb(4 5 12 / 0.62);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease;
+}
+.about-overlay[data-open="true"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+.about-card {
+  box-shadow:
+    0 40px 100px -30px rgb(0 0 0 / 0.85),
+    0 0 0 8px rgb(247 240 225 / 0.08);
+  transform: translateY(18px) scale(0.96);
+  transition: transform 420ms cubic-bezier(0.34, 1.4, 0.5, 1);
+}
+.about-overlay[data-open="true"] .about-card {
+  transform: none;
+}
