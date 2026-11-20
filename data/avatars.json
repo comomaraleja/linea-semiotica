@@ -1,0 +1,54 @@
+{
+  "peirce": {
+    "src": "/avatars/peirce.png",
+    "credit": "https://en.wikipedia.org/wiki/Charles_Sanders_Peirce"
+  },
+  "saussure": {
+    "src": "/avatars/saussure.png",
+    "credit": "https://en.wikipedia.org/wiki/Ferdinand_de_Saussure"
+  },
+  "propp": {
+    "src": "/avatars/propp.jpg",
+    "credit": "https://en.wikipedia.org/wiki/Vladimir_Propp"
+  },
+  "huizinga": {
+    "src": "/avatars/huizinga.jpg",
+    "credit": "https://en.wikipedia.org/wiki/Johan_Huizinga"
+  },
+  "barthes": {
+    "src": "/avatars/barthes.jpg",
+    "credit": "https://en.wikipedia.org/wiki/Roland_Barthes"
+  },
+  "caillois": {
+    "src": "/avatars/caillois.jpg",
+    "credit": "https://en.wikipedia.org/wiki/Roger_Caillois"
+  },
+  "greimas": {
+    "src": "/avatars/greimas.jpg",
+    "credit": "https://en.wikipedia.org/wiki/Algirdas_Julien_Greimas"
+  },
+  "foucault": {
+    "src": "/avatars/foucault.jpg",
+    "credit": "https://en.wikipedia.org/wiki/Michel_Foucault"
+  },
+  "genette": {
+    "src": "/avatars/genette.jpg",
+    "credit": "https://en.wikipedia.org/wiki/G%C3%A9rard_Genette"
+  },
+  "eco": {
+    "src": "/avatars/eco.jpg",
+    "credit": "https://en.wikipedia.org/wiki/Umberto_Eco"
+  },
+  "bajtin": {
+    "src": "/avatars/bajtin.jpg",
+    "credit": "https://en.wikipedia.org/wiki/Mikhail_Bakhtin"
+  },
+  "lakoff": {
+    "src": "/avatars/lakoff.jpg",
+    "credit": "https://en.wikipedia.org/wiki/George_Lakoff"
+  },
+  "laclau": {
+    "src": "/avatars/laclau.jpg",
+    "credit": "https://en.wikipedia.org/wiki/Ernesto_Laclau"
+  }
+}
